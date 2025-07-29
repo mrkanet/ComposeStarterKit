@@ -28,3 +28,7 @@ replay_pid*
 .gradle/
 .idea/
 build/
+.vscode/
+google-services.json
+iosApp/iosApp.xcodeproj/xcuserdata/kaan.xcuserdatad/xcschemes/iosApp.xcscheme
+iosApp/iosApp.xcodeproj/xcuserdata/kaan.xcuserdatad/xcschemes/xcschememanagement.plist
