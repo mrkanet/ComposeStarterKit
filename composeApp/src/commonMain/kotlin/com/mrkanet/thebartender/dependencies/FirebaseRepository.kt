@@ -1,18 +1,23 @@
 package com.mrkanet.thebartender.dependencies
 
+import dev.gitlive.firebase.auth.FirebaseAuth
+import dev.gitlive.firebase.firestore.FirebaseFirestore
+
 interface FirebaseRepository {
-    fun signIn(): String
+    suspend fun signInAnonymously(): String
     fun isUserSignedIn(): Boolean
 }
 
 class FirebaseRepositoryImpl(
-    private val dbClient: DBClient
+    private val auth: FirebaseAuth,
+    private val firestore: FirebaseFirestore
 ) : FirebaseRepository {
-    override fun signIn(): String {
-        return "Signed In"
+    override suspend fun signInAnonymously(): String {
+        auth.signInAnonymously()
+        return auth.currentUser?.uid ?: "Error"
     }
 
     override fun isUserSignedIn(): Boolean {
-        return true
+        return auth.currentUser != null
     }
 }

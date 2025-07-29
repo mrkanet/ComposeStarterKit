@@ -24,6 +24,7 @@ navigationCompose = "2.7.0-alpha03"
 firebaseAuthKtx = "23.2.0"
 firebaseAnalytics = "22.2.0"
 firebaseBom = "33.9.0"
+firebase-multiplatform = "1.13.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -51,6 +52,10 @@ koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", ver
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
 firebase-bom-platform = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+
+firebase-auth-multiplatform = { group = "dev.gitlive", name = "firebase-auth", version.ref = "firebase-multiplatform" }
+firebase-firestore-multiplatform = { group = "dev.gitlive", name = "firebase-firestore", version.ref = "firebase-multiplatform" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

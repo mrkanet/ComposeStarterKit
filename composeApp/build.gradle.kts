@@ -54,11 +54,18 @@ kotlin {
             implementation(libs.navigation.compose)
 
             //firebase
+            implementation(libs.firebase.auth.multiplatform)
+            implementation(libs.firebase.firestore.multiplatform)
+        }
+        androidMain.dependencies {
+            implementation(compose.preview)
+            implementation(libs.androidx.activity.compose)
+
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
             implementation(project.dependencies.platform(libs.firebase.bom.platform))
             implementation(libs.firebase.auth.ktx)
             implementation(libs.firebase.analytics)
-
-
         }
     }
 }
@@ -91,7 +98,5 @@ android {
 }
 
 dependencies {
-    implementation(libs.firebase.auth.ktx)
     debugImplementation(compose.uiTooling)
 }
-
