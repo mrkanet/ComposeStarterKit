@@ -56,6 +56,9 @@ kotlin {
             //firebase
             implementation(libs.firebase.auth.multiplatform)
             implementation(libs.firebase.firestore.multiplatform)
+
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
         }
         androidMain.dependencies {
             implementation(compose.preview)
