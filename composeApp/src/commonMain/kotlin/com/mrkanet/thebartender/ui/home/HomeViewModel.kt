@@ -14,9 +14,13 @@ class HomeViewModel(
     private val _isUserLoggedIn = MutableStateFlow(false)
     val isUserLoggedIn = _isUserLoggedIn.asStateFlow()
 
+    init {
+        _isUserLoggedIn.value = repository.isUserSignedIn()
+    }
+
     fun logUserIn() {
         viewModelScope.launch {
-            delay(1000)
+            repository.signInAnonymously()
             _isUserLoggedIn.value = repository.isUserSignedIn()
         }
     }
